@@ -8,10 +8,11 @@ browser.browserAction.onClicked.addListener(function() {
     console.log(activeTabUrl)
     if (activeTabUrl.slice(0, 23) == "https://www.amazon.com/") {
       console.log('Amazon tab!')
-      var sku = activeTabUrl.slice(activeTabUrl.indexOf('/B0')) // Maybe remove the 0? Change to regex later?
+      const skuIndex = activeTabUrl.indexOf('/B0') // Maybe remove the 0? Change to regex later?
+      var sku = activeTabUrl.slice(skuIndex, skuIndex + 11)
       console.log(sku)
-      var final = "https://camelcamelcamel.com/product/"
-      final.concat(sku)
+      var final = "https://camelcamelcamel.com/product"
+      final = final.concat(sku)
       console.log(final)
       var creating = browser.tabs.create({
         url: final
