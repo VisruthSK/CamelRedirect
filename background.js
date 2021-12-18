@@ -6,6 +6,7 @@ browser.browserAction.onClicked.addListener(function() {
     var activeTab = tabs[0];
     var activeTabUrl = activeTab.url;
     console.log(activeTabUrl)
+    //Add support for other countries from CCC website
     if (activeTabUrl.slice(0, 23) == "https://www.amazon.com/") {
       console.log('Amazon tab!')
       const skuIndex = activeTabUrl.indexOf('/B0') // Maybe remove the 0? Change to regex later?
