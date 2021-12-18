@@ -1,0 +1,19 @@
+{
+
+  "manifest_version": 3,
+  "name": "CamelCamelCamelRedirect",
+  "version": "1.0",
+
+  "description": "Click on extension toolbar button (or use a shortcut) on an Amazon page in order to open it's CCC page. MV3",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {},
+  "permissions": ["activeTab"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": "Alt+Shift+D"
+    }
+  }
+
+}
