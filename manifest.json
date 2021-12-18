@@ -5,15 +5,13 @@
   "version": "0.1",
 
   "description": "Click on extension toolbar button on an Amazon page in order to open it's CCC page.",
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+  "background": {
+    "scripts": ["background.js"]
   },
-  "content_scripts": [
-  {
-    "matches": ["*://*.amazon.com/*"],
-    "js": ["borderify.js"]
-  }
-]
+  "browser_action": {
+    "default_icon": "logo .png"
+  },
+  "permissions": ["activeTab", "*://www.amazon.com/*",
+  "tabs"]
 
 }
