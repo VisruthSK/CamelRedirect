@@ -2,9 +2,9 @@
 
   "manifest_version": 2,
   "name": "CamelCamelCamelRedirect",
-  "version": "0.1",
+  "version": "1.0",
 
-  "description": "Click on extension toolbar button on an Amazon page in order to open it's CCC page.",
+  "description": "Click on extension toolbar button (or use a shortcut) on an Amazon page in order to open it's CCC page.",
   "background": {
     "scripts": ["background.js"]
   },
