@@ -15,36 +15,21 @@ browser.browserAction.onClicked.addListener(function() {
           break;
         }
       }
-      console.log(ccTLD);
       if (ccTLD == '') {
         console.log('Unsupported country');
-      }
-      // console.log(ccTLD);
-      // special case for amazon.com
-      else {
+      } else {
         if (ccTLD == 'm/.') {
           ccTLD = ''
         }
         const skuIndex = activeTabUrl.indexOf('/B0') // Change to regex later?
-        // console.log(skuIndex);
         var sku = activeTabUrl.slice(skuIndex, skuIndex + 11)
-        // console.log(sku);
         var final = "https://" + ccTLD + "camelcamelcamel.com/product" + sku
-        // console.log(final);
-        // var country = ''
-        // if (ccTLD != -1) {
-        //   country = amazonLinks[ccTLD] + '.'
-        // }
-        // var final = "https://" + country + "camelcamelcamel.com/product" + sku
-        // console.log(final)
         var creating = browser.tabs.create({
           url: final
         });
-
       }
     } else {
       console.log('Not Amazon tab')
     }
-
   });
 });
