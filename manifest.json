@@ -13,7 +13,7 @@
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
-        "default": "Ctrl+Alt+C"
+        "default": "Ctrl+Alt+D"
       }
     }
   }

@@ -1,5 +1,5 @@
-browser.browserAction.onClicked.addListener(function() {
-  browser.tabs.query({
+chrome.browserAction.onClicked.addListener(function() {
+  chrome.tabs.query({
     active: true,
     currentWindow: true
   }, function(tabs) {
@@ -24,7 +24,7 @@ browser.browserAction.onClicked.addListener(function() {
         const skuIndex = activeTabUrl.indexOf('/B0') // Change to regex later?
         var sku = activeTabUrl.slice(skuIndex, skuIndex + 11)
         var final = "https://" + ccTLD + "camelcamelcamel.com/product" + sku
-        var creating = browser.tabs.create({
+        var creating = chrome.tabs.create({
           url: final
         });
       }
