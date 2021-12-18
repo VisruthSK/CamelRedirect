@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function onCreated(tab) {
   console.log(`Created new tab: ${tab.id}`)
 }
@@ -19,4 +20,15 @@ browser.browserAction.onClicked.addListener(function() {
   const gettingCurrent = browser.tabs.getCurrent();
   gettingCurrent.then(onGot, onError);
   creating.then(onCreated, onError);
+=======
+browser.browserAction.onClicked.addListener(function() {
+  browser.tabs.query({
+    active: true,
+    currentWindow: true
+  }, function(tabs) {
+    var activeTab = tabs[0];
+    var activeTabUrl = activeTab.url;
+    console.log(activeTabUrl)
+  });
+>>>>>>> bb4fef9e142745b189c4d8b5a72e6df4263be186
 });
