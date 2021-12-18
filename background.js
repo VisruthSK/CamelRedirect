@@ -9,21 +9,25 @@ chrome.browserAction.onClicked.addListener(function() {
     let amazonLinks = ['com.au', 'ca', 'fr', 'de', 'it', 'es', 'co.uk', 'com/']
     if (activeTabUrl.slice(0, 19) == "https://www.amazon.") {
       var ccTLD = ''
+      // Checks for a match in the Country Code Top Level Domain so as to open the correct CamelCamelCamel webpage
       for (var x in amazonLinks) {
         if (activeTabUrl.slice(19, 27).includes(amazonLinks[x])) {
           ccTLD = amazonLinks[x].slice(-2) + '.'
           break;
         }
       }
+      // Unsupported country
       if (ccTLD == '') {
         console.log('Unsupported country');
       } else {
-        if (ccTLD == 'm/.') {
+        //Amazon US
+        if (ccTLD == 'm/.') {   
           ccTLD = ''
         }
-        const skuIndex = activeTabUrl.indexOf('/B0') // Change to regex later?
-        var sku = activeTabUrl.slice(skuIndex, skuIndex + 11)
-        var final = "https://" + ccTLD + "camelcamelcamel.com/product" + sku
+        //Find the product code/SKU
+        const skuIndex = activeTabUrl.indexOf('/B0')
+        const sku = activeTabUrl.slice(skuIndex, skuIndex + 11)
+        const final = "https://" + ccTLD + "camelcamelcamel.com/product" + sku
         var creating = chrome.tabs.create({
           url: final
         });
