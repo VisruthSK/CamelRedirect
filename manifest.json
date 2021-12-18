@@ -9,9 +9,7 @@
     "scripts": ["background.js"]
   },
   "browser_action": {},
-  "permissions": ["activeTab",
-    "tabs"
-  ],
+  "permissions": ["activeTab"],
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
