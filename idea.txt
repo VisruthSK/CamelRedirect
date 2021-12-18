@@ -1,0 +1,5 @@
+Extension icon is camel or something like that
+Click Extension
+  Read current URL and find the product ID (regex?)
+  Open camelcamelcamel.com/product/[ID] in a new tab
+  Done
